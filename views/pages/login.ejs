@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <%- include('../partials/bootstrapcss') %>
+    <style>
+       .login-main{
+        margin-top: 2rem;
+        max-width: 60%;
+        margin-inline: auto;
+       } 
+       h1{
+        margin-top: 2rem;
+        text-align: center;
+       }
+    </style>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <h1>Login</h1>
+    <div class="login-main">
+        <form method="post" action="/auth/login" >
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" required class="form-control" name="email" id="inputEmail3">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" required class="form-control" name="password" id="inputPassword3">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+    </div>
+    <%- include('../partials/bootstrapjs') %>
+</body>
+</html>

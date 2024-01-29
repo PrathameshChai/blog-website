@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= blog.title %></title>
+    <%- include('../partials/bootstrapcss')%>
+    <style>
+        .maindiv{
+            padding-top: 2rem;
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        img{
+            display: block;
+            width: 100%;
+            object-fit: contain;
+        }
+        .img-div{
+            width: 50%;
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+        <h3><%= blog.title %></h3>
+        <div class="img-div">
+            <!-- <img src="/<%= blog.coverImg %>" alt="" srcset=""> -->
+            <img src= <%= blog.coverImg.substring(0,4) === 'http' ? blog.coverImg : '/'+blog.coverImg  %> alt="">
+            <p>
+                <%= blog.body %>
+            </p>
+        </div> 
+
+    </div>
+    <%- include('../partials/bootstrapjs') %>
+</body>
+</html>

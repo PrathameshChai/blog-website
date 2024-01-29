@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Created</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            margin-top: 3rem !important;
+        }
+        .div-main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    </style>
+    <%- include('../partials/bootstrapcss')%>
+</head>
+<body>
+    
+    <div class="div-main">
+        <div>
+            <h2>
+                Awesome 🥳
+            </h2>
+            <h1>
+                <%= message %>!
+            </h1>
+        </div>
+        
+        <button onclick="window.location.href='/'" type="button" class="btn btn-success">Return home</button>
+    </div>
+    <%- include('../partials/bootstrapjs') %>
+</body>
+</html>

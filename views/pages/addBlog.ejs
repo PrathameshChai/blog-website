@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AddBlog</title>
+    <%- include('../partials/bootstrapcss')%>
+    <style>
+      h2 {
+        margin-top: 2rem;
+        text-align: center;
+      }
+      .main-container {
+        max-width: 70%;
+        margin-inline: auto;
+      }
+
+      #imageupload{
+        margin-top: 2rem;
+      }
+      .upload{
+        margin-top: 1.5rem;
+        background-color: #0D6EFD;
+        border: none;
+        border-radius: 4px;
+        padding: 8px;
+        color: white;
+      }
+      a{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: black;
+      }
+      
+    </style>
+  
+  </head>
+  <body>
+    <a href="#" onclick="history.go(-1)"> Go Back</a>
+    <h2>AddBlog</h2>
+
+    <div class="main-container">
+
+      <form action="/addblog" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Title</label>
+          <input
+          required
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            name="title"
+            placeholder="title"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Description</label
+          >
+          <textarea
+          required
+            class="form-control"
+            name="body"
+            id="exampleFormControlTextarea1"
+            placeholder="description..."
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Cover Image (Optional)</label>
+          <input
+            class="form-control"
+            name="coverImg"
+            type="file"
+            id="formFile"
+          />
+        </div>
+        <button id="textsubmit" type="submit" class="btn btn-primary">create</button>
+      </form>
+
+    </div>
+
+    <%- include('../partials/bootstrapjs') %>
+  </body>
+</html>

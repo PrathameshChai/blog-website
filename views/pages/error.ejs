@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <%- include('../partials/bootstrapcss') %>
+    <style>
+        .main{
+            margin-top: 4rem;
+            max-width: fit-content;
+            margin-inline: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        p{
+            margin: 0;
+        }
+        .desc{
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>
+            Error Occured!
+        </h1>
+        <p><%= errorMsg %></p>
+
+        <% if (desc) { %>
+            <div class="desc">
+            <p><%= desc[0] %></p>
+
+            <ul>
+                <% desc.slice(1).forEach(item => { %>
+                    <li><%= item %></li>
+                <% }); %>
+            </ul>
+        </div>
+        <% } %>
+
+        <button onclick="history.back()" type="button" class="btn btn-success">Retry</button>
+    </div>
+
+    <%- include('../partials/bootstrapjs') %>
+</body>
+</html>

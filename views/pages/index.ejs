@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <style>
+        .card-container{
+          display: flex;
+          gap: 4rem;
+          padding: 2rem;
+        }
+    </style>
+    <%- include('../partials/bootstrapcss')%>
+</head>
+<body>
+    <%- typeof name !== 'undefined' ? include('../partials/usernavbar', {name: name}) : include('../partials/navbar') %>
+
+    <div class="card-container">
+    <% blogs.forEach(function(blog) { %>
+        <div class="card" style="width: 18rem;">
+            <img src=<%= blog.coverImg %> class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <p class="card-text">
+                <% if (blog.body.length > 60) { %>
+                  <%= blog.body.slice(0, 60) %>...
+                <% } else { %>
+                  <%= blog.body %>
+                <% } %>
+              </p>
+              <a href= <%= `/getblogpost/${blog._id}` %> class="btn btn-primary">Read</a>
+            </div>
+          </div>
+      <% }); %>
+    </div>
+      
+
+    <%- include('../partials/bootstrapjs') %>
+</body>
+</html>
